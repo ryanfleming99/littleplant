@@ -1,0 +1,79 @@
+/* src/styles/PortfolioPage.css */
+.portfolio-page-layout {
+  display: flex;
+  flex-direction: column; /* Stack title and grid vertically */
+  align-items: center; /* Center content horizontally */
+  padding-top: 120px; /* Adjust as needed for navbar */
+  padding-bottom: 80px;
+  width: 100%;
+}
+
+.portfolio-content {
+  position: relative; /* Ensure content stays above canvas */
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px; /* Max width for the content area */
+  padding-left: 5%; /* Side padding */
+  padding-right: 5%;
+  text-align: center; /* Center title */
+}
+
+.portfolio-title {
+  font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive title size */
+  color: #fff; /* White title */
+  margin-bottom: 3rem; /* Space below title */
+  opacity: 0; /* Start hidden for GSAP */
+}
+
+/* Optional intro text styling */
+.portfolio-intro {
+  font-size: 1.1rem;
+  color: var(--neutral-color);
+  margin-bottom: 4rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  opacity: 0; /* Start hidden for GSAP */
+}
+
+.portfolio-grid {
+  display: grid;
+  /* Responsive grid columns */
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /* Adjust minmax as needed */
+  gap: 2.5rem; /* Gap between grid items */
+  width: 100%;
+}
+
+/* Style the grid items directly for animation targeting if needed */
+.portfolio-grid > * {
+  opacity: 0; /* Start cards hidden for GSAP */
+}
+
+/* Media query for fewer columns on smaller screens */
+@media (max-width: 700px) {
+  .portfolio-grid {
+    grid-template-columns: repeat(
+      auto-fit,
+      minmax(280px, 1fr)
+    ); /* Slightly smaller min */
+    gap: 2rem;
+  }
+  .portfolio-content {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  .portfolio-title {
+    margin-bottom: 2rem;
+    color: white;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Single column on very small screens */
+    gap: 1.5rem;
+  }
+}

@@ -4,9 +4,10 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
+import PortfolioPage from "./pages/PortfolioPage"; // Import the new page
 import "./styles/Global.css";
 
-// Basic loading component
+// Basic loading component (or use your existing one)
 const LoadingFallback = () => (
   <div
     style={{
@@ -15,12 +16,12 @@ const LoadingFallback = () => (
       alignItems: "center",
       width: "100vw",
       height: "100vh",
-      backgroundColor: "#0d0d1a", // Match bg color
-      color: "#fff",
+      backgroundColor: "var(--bg-color)",
+      color: "var(--text-color)",
       fontSize: "1.5rem",
     }}
   >
-    Loading Experience...
+    Loading...
   </div>
 );
 
@@ -32,7 +33,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
-          {/* Add routes for other pages here */}
+          <Route path="/portfolio" element={<PortfolioPage />} />{" "}
+          {/* Add Portfolio Route */}
+          {/* Add more routes as needed */}
         </Routes>
       </Suspense>
     </>

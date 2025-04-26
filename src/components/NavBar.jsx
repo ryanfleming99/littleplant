@@ -1,10 +1,9 @@
 // src/components/NavBar.jsx
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom"; // Use NavLink for active styling
 import "../styles/NavBar.css";
 
 const NavBar = () => {
-  // Add state later for active link highlighting or scrolled background if needed
   return (
     <nav className="navbar">
       <Link to="/" className="nav-logo">
@@ -12,12 +11,36 @@ const NavBar = () => {
       </Link>
       <ul className="nav-links">
         <li>
-          <Link to="/">Home</Link>
+          {/* Use NavLink for active class */}
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            Home
+          </NavLink>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <NavLink
+            to="/about"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            About
+          </NavLink>
         </li>
-        {/* Add more links (e.g., Portfolio, Contact) here */}
+        <li>
+          <NavLink
+            to="/portfolio"
+            className={({ isActive }) =>
+              isActive ? "nav-link active" : "nav-link"
+            }
+          >
+            Portfolio {/* Add Portfolio Link */}
+          </NavLink>
+        </li>
       </ul>
     </nav>
   );
