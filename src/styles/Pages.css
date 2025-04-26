@@ -1,0 +1,72 @@
+/* src/styles/Pages.css */
+.page-container {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  /* justify-content: center; Default - can override */
+  align-items: center; /* Center vertically */
+  padding: 0 8%; /* Side padding */
+  box-sizing: border-box;
+  overflow: hidden; /* Content shouldn't cause scroll */
+  color: var(--text-color);
+  /* Add padding top equal to navbar height + spacing */
+  padding-top: 120px;
+  padding-bottom: 60px; /* Ensure space at bottom too */
+}
+
+.content-container {
+  /* New container for better control */
+  position: relative;
+  z-index: 1;
+  max-width: 600px; /* Limit text width */
+  text-align: left; /* Left align professional text */
+  opacity: 0; /* Start hidden for GSAP animation */
+  transform: translateY(20px); /* Start slightly lower for animation */
+}
+
+.page-container h1 {
+  font-size: clamp(2.5rem, 6vw, 4rem); /* Responsive heading */
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #fff; /* White for main headings */
+  line-height: 1.2;
+  letter-spacing: -1px; /* Tighten spacing */
+}
+
+.page-container h2 {
+  font-size: clamp(2rem, 5vw, 3rem); /* Responsive heading */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--primary-accent); /* Use accent color for H2 */
+  line-height: 1.3;
+}
+
+.page-container p {
+  font-size: clamp(1rem, 2.5vw, 1.1rem); /* Responsive paragraph */
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: var(--neutral-color); /* Slightly muted paragraph text */
+}
+
+.cta-button {
+  /* Style for call-to-action */
+  display: inline-block; /* Correct alignment */
+  background: var(--primary-accent);
+  color: #fff;
+  padding: 0.8rem 1.8rem;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.cta-button:hover {
+  background-color: var(--secondary-accent);
+  color: var(--bg-color);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(138, 79, 255, 0.4);
+}

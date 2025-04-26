@@ -1,0 +1,80 @@
+/* src/styles/Global.css */
+:root {
+  --bg-color: #0d0d1a; /* Deep, dark purple/blue */
+  --text-color: #e8e8f_a; /* Soft off-white */
+  --primary-accent: #8a4ff_f; /* Vibrant purple */
+  --secondary-accent: #4ff_fa9; /* Teal/Cyan accent */
+  --neutral-color: #cccccc;
+  --font-sans: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px; /* Base font size */
+}
+
+body {
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  font-weight: 400;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+h1,
+h2,
+h3,
+p {
+  position: relative; /* Keep text above canvas */
+  z-index: 1;
+  /* Removed default margins, handle in components/pages */
+}
+
+a {
+  font-weight: 500;
+  color: var(--secondary-accent);
+  text-decoration: none; /* Remove underline */
+  transition: color 0.3s ease, filter 0.3s ease;
+}
+a:hover {
+  color: var(--primary-accent);
+  filter: brightness(1.2);
+}
+
+/* Canvas base style */
+canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0; /* Behind Nav, Above BG color if needed */
+}
+
+.cta-button {
+  background: white;
+  color: black;
+}
+
+.cta-button:hover {
+  background: black;
+  color: white;
+}
